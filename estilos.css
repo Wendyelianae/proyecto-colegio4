@@ -1,0 +1,325 @@
+/* =========================================================
+   🔵🌟 DISEÑO ULTRA-MODERNO – ESTILO PREMIUM ANIMADO
+   ========================================================= */
+
+/* VARIABLES DE COLOR PARA FÁCIL PERSONALIZACIÓN */
+:root {
+    --azul-oscuro: #001A33;
+    --azul: #004CBE;
+    --azul-brillante: #2A8CFF;
+    --amarillo: #FFD93D;
+    --amarillo-brillante: #FFEA6A;
+    --blanco: #FFFFFF;
+    --glass: rgba(255, 255, 255, 0.12);
+    --glass2: rgba(255, 255, 255, 0.2);
+    --blur: blur(14px);
+    --shadow: rgba(0, 0, 0, 0.35);
+    --transition: 0.4s ease;
+}
+
+/* =========================================================
+   FONDO GENERAL ANIMADO
+   ========================================================= */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul), var(--azul-brillante));
+    background-size: 300%;
+    animation: fondoAnimado 18s ease infinite alternate;
+    color: var(--amarillo);
+}
+
+@keyframes fondoAnimado {
+    0% { background-position: 0% 40%; }
+    100% { background-position: 100% 60%; }
+}
+
+/* =========================================================
+   HEADER MODERNO CON EFECTO VIDRIO
+   ========================================================= */
+header {
+    backdrop-filter: var(--blur);
+    background: var(--glass);
+    box-shadow: 0 8px 25px var(--shadow);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* BRILLO DE LÍNEA INFERIOR */
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--amarillo), transparent);
+    animation: shineLine 3s ease infinite;
+}
+
+@keyframes shineLine {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+/* LOGO FLOTANTE */
+.logo {
+    width: 195px;
+    height: 195px;
+    border-radius: 50%;
+    border: 5px solid var(--amarillo-brillante);
+    box-shadow: 0 10px 30px var(--shadow), 0 0 35px var(--amarillo);
+    animation: logoFloat 4s ease-in-out infinite alternate;
+    transition: var(--transition);
+}
+
+@keyframes logoFloat {
+    0% { transform: translateY(0) rotate(-2deg); }
+    100% { transform: translateY(-14px) rotate(2deg); }
+}
+
+.logo:hover {
+    transform: scale(1.13) rotate(5deg);
+}
+
+/* TÍTULO IMPACTANTE DIFUMINADO Y ANIMADO */
+header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.8rem;
+    margin: 15px 0 0;
+    letter-spacing: 5px;
+    background: linear-gradient(90deg, var(--azul-brillante), var(--blanco), var(--amarillo));
+    background-size: 300% 100%; /* Permite el movimiento horizontal del degradado */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: tituloAnimado 6s linear infinite;
+    text-shadow: none; /* Sin brillo/neón */
+}
+
+@keyframes tituloAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================================================
+   MENÚ MODERNO – BOTONES BRILLANTES
+   ========================================================= */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 12px;
+    transition: var(--transition);
+    background: linear-gradient(145deg, var(--glass), var(--glass2));
+    backdrop-filter: var(--blur);
+    box-shadow: 0 6px 15px var(--shadow);
+}
+
+nav a:hover {
+    background: var(--amarillo);
+    color: var(--azul-oscuro);
+    box-shadow: 0 0 20px var(--amarillo), 0 0 30px var(--amarillo);
+    transform: translateY(-4px);
+}
+
+/* =========================================================
+   HERO ANIMADO + EFECTO PROFUNDO
+   ========================================================= */
+.hero {
+    background: linear-gradient(
+                rgba(0,0,0,0.45),
+                rgba(0,0,0,0.75)
+              ),
+              url('https://via.placeholder.com/1600x600/003366/ffffff?text=Colegio+Nueva+Esperanza') center/cover;
+    padding: 150px 20px;
+    text-align: center;
+    animation: fadeUp 2s ease forwards;
+    color: var(--amarillo-brillante);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    animation: floatHero 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes floatHero {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-top: 20px;
+}
+
+/* =========================================================
+   TARJETAS MODERNAS FLOTANTES
+   ========================================================= */
+.niveles-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 50px;
+}
+
+.nivel {
+    width: 270px;
+    background: var(--glass2);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: var(--blur);
+    box-shadow: 0 10px 25px var(--shadow);
+    transition: var(--transition);
+    animation: cardFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes cardFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-12px); }
+}
+
+.nivel:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 40px var(--shadow), 0 0 20px var(--amarillo-brillante);
+}
+
+.nivel img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--azul-brillante);
+    transition: var(--transition);
+}
+
+.nivel img:hover {
+    transform: scale(1.12);
+}
+
+.nivel h3 {
+    font-size: 1.8rem;
+    font-family: 'Bebas Neue';
+    color: var(--amarillo);
+    margin: 12px 0;
+}
+
+.nivel p {
+    color: var(--blanco);
+    padding: 0 15px 20px;
+}
+
+/* =========================================================
+   GALERÍA DE IMÁGENES MODERNA
+   ========================================================= */
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+}
+
+.galeria img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 4px solid var(--amarillo);
+    box-shadow: 0 10px 28px var(--shadow);
+    transition: var(--transition);
+}
+
+.galeria img:hover {
+    transform: scale(1.12) rotate(4deg);
+    box-shadow: 0 15px 45px var(--shadow), 0 0 25px var(--amarillo-brillante);
+}
+
+/* =========================================================
+   FRASES / SECCIONES
+   ========================================================= */
+section h2 {
+    font-size: 2.8rem;
+    font-family: 'Bebas Neue';
+    background: linear-gradient(90deg, var(--amarillo), var(--amarillo-brillante), var(--blanco));
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: tituloGlow 4s linear infinite;
+    margin-bottom: 20px;
+}
+
+section p {
+    color: var(--blanco);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* =========================================================
+   FOOTER PREMIUM
+   ========================================================= */
+footer {
+    background: var(--glass);
+    backdrop-filter: var(--blur);
+    color: var(--amarillo-brillante);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+/* =========================================================
+   TITULOS Y BOTONES RESPONSIVOS
+   ========================================================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    header h1 { font-size: 3.8rem; }
+    .hero h2 { font-size: 2.8rem; }
+    section h2 { font-size: 2.4rem; }
+    .nivel h3 { font-size: 1.6rem; }
+    nav a { font-size: 1.1rem; padding: 8px 20px; }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.8rem; letter-spacing: 3px; }
+    .hero h2 { font-size: 2.2rem; }
+    section h2 { font-size: 2rem; }
+    .nivel h3 { font-size: 1.4rem; }
+    nav a { font-size: 1rem; padding: 6px 15px; }
+    .niveles-grid { gap: 20px; padding: 30px 15px; justify-content: center; }
+    .galeria { gap: 15px; padding: 15px; }
+    .galeria img { width: 90%; height: auto; }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+    header h1 { font-size: 2rem; letter-spacing: 2px; }
+    .hero h2 { font-size: 1.8rem; }
+    section h2 { font-size: 1.6rem; }
+    .nivel h3 { font-size: 1.2rem; }
+    nav a { font-size: 0.9rem; padding: 5px 10px; }
+}
